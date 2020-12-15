@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication;
  * @date 2020/12/15 21:41
  * @tool ThinkPadX1隐士
  * Created with 2019.3.2.IntelliJ IDEA
- * Description:
+ * Description: 测试等待线程结束时间的方法join
  */
 public class TestJoinThread {
     public static void main(String[] args) {
