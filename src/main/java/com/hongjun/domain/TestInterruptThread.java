@@ -8,24 +8,20 @@ package com.hongjun.domain;
  * Description: 测试中断线程
  */
 public class TestInterruptThread {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Thread t = new MyThread();
-        t.start();
+        // t.start();
         try {
             Thread.sleep(1); // 暂停1毫秒
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        // t.interrupt(); // 中断t线程
-        try {
-            t.join(); // 等待t线程结束
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
-       /* HelloThread helloThread = new HelloThread();
+        HelloThread helloThread = new HelloThread();
+        helloThread.setName("HelloThread");
         helloThread.start();
-        helloThread.running = false;*/
+        // Thread.sleep(1000);
+
         System.out.println("end");
     }
 }
@@ -56,6 +52,10 @@ class MyThread extends Thread {
 }
 class HelloThread extends Thread {
     // 定义线程退出标志
+    /**
+     *     线程间共享的变量
+     *     线程间共享变量需要使用volatile关键字标记，确保每个线程都能读取到更新后的变量值。
+     */
     public volatile boolean running = true;
     @Override
     public void run() {
@@ -63,7 +63,11 @@ class HelloThread extends Thread {
         while (running) {
             n ++;
             System.out.println(n + " hello!");
+            if (n >= 10) {
+                running = false;
+            }
         }
+
         System.out.println("end!");
     }
 }
