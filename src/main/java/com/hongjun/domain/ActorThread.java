@@ -20,6 +20,7 @@ public class ActorThread extends Thread {
             if (count >= 100){
                 keepRunning = false;
             }
+            
             if (count % 10 == 0){
                 /*try {
                     // 线程休眠1秒
