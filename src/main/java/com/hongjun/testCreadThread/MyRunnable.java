@@ -10,24 +10,15 @@ package com.hongjun.testCreadThread;
 public class MyRunnable implements Runnable {
     @Override
     public void run() {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        // 为线程搞一个名字
+        Thread.currentThread().setName("MyRunnable");
         // 执行业务逻辑代码
-        System.out.println("hello, Runnable-------" + Thread.currentThread());
+        System.out.println("hello, Runnable");
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         // 这种方法是不建议使用的
         Thread thread = new Thread(new MyRunnable());
-        // 为线程搞一个名字
-        thread.setName("oneThread");
         thread.start();
-        Thread thread1 = new Thread(new MyRunnable());
-        thread1.setName("twoThread");
-        thread1.start();
-        System.out.println("end");
     }
 }

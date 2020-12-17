@@ -9,12 +9,11 @@ import java.util.concurrent.FutureTask;
  * @date 2020/12/16 17:17
  * @tool ThinkPadX1隐士
  * Created with 2019.3.2.IntelliJ IDEA
- * Description: 使用实现Callable接口的方式创建线程
+ * Description:
  */
 public class MyThreadByCallable implements Callable{
     @Override
     public Object call() throws Exception {
-        // call方法可以指定返回的值
         return 1;
     }
 
