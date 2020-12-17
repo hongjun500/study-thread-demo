@@ -19,13 +19,13 @@ public class ActressRunnable implements Runnable {
                 keepRunning = false;
             }
             if (count % 10 == 0){
-                try {
+               /* try {
                     // 线程休眠1秒
                     // System.out.println(Thread.currentThread().getName() + "休息一秒!");
-                    Thread.sleep(1000);
+                    Thread.sleep(0);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                }
+                }*/
             }
         }
         System.out.println(Thread.currentThread().getName() + "演出结束!");
