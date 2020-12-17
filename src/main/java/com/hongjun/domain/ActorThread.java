@@ -21,13 +21,13 @@ public class ActorThread extends Thread {
                 keepRunning = false;
             }
             if (count % 10 == 0){
-                try {
+                /*try {
                     // 线程休眠1秒
                     // System.out.println(getName() + "休息一秒!");
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                }
+                }*/
             }
         }
         System.out.println(getName() + "演出结束!");
